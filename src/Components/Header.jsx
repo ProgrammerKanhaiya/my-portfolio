@@ -7,7 +7,7 @@ export default function Header() {
     const {color , setColor} = React.useContext(ColorContext)
     console.log('color',color);
     return (
-        <header className="shadow sticky z-50 top-0 dark">
+        <header className="shadow sticky z-50 top-0 dark-cl">
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
@@ -77,9 +77,10 @@ export default function Header() {
                                 </NavLink>
         
                             </li>
-                            <li className="cursor-pointer">
+                            {/* <li className="cursor-pointer">
                                 DarkMode
-                            </li>
+
+                            </li> */}
 
                         </ul>
                     </div>
