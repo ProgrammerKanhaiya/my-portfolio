@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body{
+    background-color: black;
+    color: #fff;
+} */
 
 .main-div {
     margin-left: 12rem !important;

@@ -10,6 +10,7 @@ import Contact from './Components/Contact'
 import Home from './Components/Home'
 import About from './Components/About'
 import Github from './Components/Github'
+import NotFoud from './Components/NotFound1'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "github",
         element: <Github />
+      },
+      {
+        path: "*",
+        element: < NotFoud/>
       }
     ]
   }

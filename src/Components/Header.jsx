@@ -1,91 +1,60 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import DarkMode from './DarkMode';
-import {ColorContext} from '../Context/ColorContex'
-export default function Header() {
+import React, { useState } from 'react';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { NavLink } from 'react-router-dom';
+const navigation = [
+    {name:"Home" , to:"/", isActive:true},
+    {name:"About" , to:"/about", isActive:false},
+    {name:"Github" , to:"/github", isActive:false},
+    {name:"Blogs" , to:"/blogs", isActive:false},
+    {name:"Portfolio" , to:"/portfolio", isActive:false},
+    {name:"Resume" , to:"/resume", isActive:false},
+    {name:"Projects" , to:"/projects", isActive:false},
+]
 
-    const {color , setColor} = React.useContext(ColorContext)
-    console.log('color',color);
+const Header = () => {
+    const [nav, setNav] = useState(false)
     return (
-        <header className="shadow sticky z-50 top-0 dark-cl">
-            <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
-                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                    <Link to="/" className="flex items-center"> <span className='font-extrabold  hover:font-extrabold text-2xl'>Programmer Kanhaiya</span>
-                        {/* <img
-                            src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                            className="mr-3 h-12"
-                            alt="Logo"
-                        /> */}
-                    </Link>
-                    <div className="flex items-center lg:order-2">
-                        <Link
-                            to="#"
-                            className="text-gray-800 hover:bg-sky-700  focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none "
-                        >
-                            Log in
-                        </Link>
-                        <Link
-                            to="#"
-                            className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" 
-                        >
-                            Get started
-                        </Link>
-                    </div>
-                    <div
-                        className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
-                        id="mobile-menu-2"
-                    >
-                        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                            <li>
-                                <NavLink
-                                    to="/"
-                                    className={({ isActive }) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    Home
-                                </NavLink>
+        // max-w-[1240px] 
+        <div className="flex justify-between items-center w-full mx-auto px-4 text-black sticky top-0 shadow-lg h-16">
+            <div className="logo p-2 "><span className={nav ? 'text-white' : 'font-extrabold text-[#000fb5] text-2xl '}>Programmer Kanhaiya</span></div>
+            <nav className=''>
+                <ul className='hidden md:flex'>
+                   {
+                    navigation.map((items)=>{
+                        return(
+                            <li className="p-5" key={items.name}>
+                                <NavLink  to={items.to} >{items.name}</NavLink>
                             </li>
-                            <li>
-                                <NavLink
-                                    to="/about"
-                                    className={({ isActive }) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    About
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                    to="/contact"
-                                    className={({ isActive }) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    Contact
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                    to="/github"
-                                    className={({ isActive }) =>
-                                        `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-700"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
-                                    }
-                                >
-                                    Github
-                                </NavLink>
-        
-                            </li>
-                            {/* <li className="cursor-pointer">
-                                DarkMode
-
-                            </li> */}
-
-                        </ul>
-                    </div>
-                </div>
+                        )
+                    })
+                   }
+                </ul>
             </nav>
-        </header>
-    );
+            <div className='block md:hidden border-b-gray-900' onClick={() => {
+                setNav(!nav)
+            }}>
+                {!nav ? <AiOutlineMenu size={30} /> : <AiOutlineClose size={30} />}
+            {/* </div>
+            <div className='block md:hidden ' > */}
+                <ul className={nav ? 'fixed left-1 top-0 w-[60%] h-full border-r border-r-gray-300 ease-in-out duration-500 bg-slate-50' : 'ease-in-out duration-500 fixed left-[-100%]'}>
+                    <div className="logo"><span className='font-bold w-full text-[#000fb5] px-5 py-2 text-2xl'>Programmer Kanhaiya</span></div>
+                    {
+                    navigation.map((items)=>{
+                        return(
+                            <li key={items.name} className="p-5 border-b border-gray-300">
+                                
+                                <NavLink  to={items.to} >{items.name}</NavLink>
+                            </li>
+                        )
+                    })
+                   }
+                </ul>
+            </div>
+        </div>
+
+    )
 }
+
+
+
+export default Header
