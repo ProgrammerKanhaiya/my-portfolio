@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { BiSolidLabel } from 'react-icons/bi';
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 import Typewriter from './TypeWriter';
 export default function Home() {
     return (
@@ -16,17 +16,15 @@ export default function Home() {
                         </h2>
                         {/* <Typewriter text="I am Full Stack Developer." delay={50} /> */}
                         <div>
-                            <span className='md:text-3xl sm:text-2xl font-bold  text-[#00df9a]'>I am </span>
-                         <Typed
+                            <span className='md:text-3xl sm:text-2xl font-bold  text-[#00df9a]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sint cum nesciunt itaque illum voluptas quisquam earum ex, quibusdam id excepturi vel doloremque totam temporibus iure blanditiis tempore alias placeat. </span>
+                         {/* <Typed
                             className='md:text-2xl sm:text-xl font-bold  text-[#00df9a]'
                                 strings={['Full Stack Developer.' , 'Web Developer.']}
                                 typeSpeed={40}
                                 backSpeed={40}
                                 loop
-                            />
-
-
-                        </div>
+                            />*/}
+                        </div> 
 
                         <Link
                             className="inline-flex text-white items-center px-6 py-3 font-medium bg-orange-700 rounded-lg hover:opacity-75 cursor-pointer"
