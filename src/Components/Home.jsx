@@ -8,15 +8,15 @@ export default function Home() {
         <div className="mx-auto w-full max-w-7xl">
             <aside className="relative overflow-hidden text-black rounded-lg sm:mx-16 mx-2 sm:py-16">
                 <div className="relative z-10 max-w-screen-xl px-4  pb-20 pt-10 sm:py-24 mx-auto sm:px-6 lg:px-8">
-                    <div className="max-w-xl sm:mt-1 mt-80 space-y-8 text-center sm:text-right sm:ml-auto">
-                        <h2 className="text-xl font-bold sm:text-5xl">
+                    <div className="max-w-xl sm:mt-1 mt-80 space-y-8 text-justify sm:ml-auto">
+                        {/* <h2 className="text-xl font-bold sm:text-5xl"> */}
 
                             {/* <Typewriter text="My React App" delay={100} /> */}
                             { /* <span className="hidden sm:block text-4xl">Lorem Ipsum</span> */}
-                        </h2>
+                        {/* </h2> */}
                         {/* <Typewriter text="I am Full Stack Developer." delay={50} /> */}
                         <div>
-                            <span className='md:text-3xl sm:text-2xl font-bold  text-[#00df9a]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sint cum nesciunt itaque illum voluptas quisquam earum ex, quibusdam id excepturi vel doloremque totam temporibus iure blanditiis tempore alias placeat. </span>
+                            <span className='md:text-2xl sm:text-xl text-[#00df9a] text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sint cum nesciunt itaque illum voluptas quisquam earum ex, quibusdam id excepturi vel doloremque totam temporibus iure blanditiis tempore alias placeat. </span>
                          {/* <Typed
                             className='md:text-2xl sm:text-xl font-bold  text-[#00df9a]'
                                 strings={['Full Stack Developer.' , 'Web Developer.']}

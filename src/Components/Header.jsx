@@ -14,8 +14,8 @@ const navigation = [
 const Header = () => {
     const [nav, setNav] = useState(false)
     return (
-        // max-w-[1240px] {nav ? 'text-white' : 'font-extrabold text-[#000fb5] text-2xl '}
-        <div className="flex justify-between items-center w-full mx-auto px-4 text-black sticky top-0 shadow-lg h-16">
+        // max-w-[1240px] {nav ? 'text-white' : 'font-extrabold text-[#000fb5] text-2xl '} rgb(241 245 249 / var(--tw-bg-opacity))
+        <div className="flex justify-between items-center w-full mx-auto px-4 text-black bg-slate-50 sticky top-0 shadow-lg h-16 z-50">
             <div className="logo p-2 "><span className = {!nav?'w-full text-3xl font-bold text-[#00df9a]':'hidden'}>Programmer Kanhaiya</span></div>
             {/* <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT.</h1> */}
             <nav className=''>
