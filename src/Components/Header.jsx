@@ -14,9 +14,10 @@ const navigation = [
 const Header = () => {
     const [nav, setNav] = useState(false)
     return (
-        // max-w-[1240px] 
+        // max-w-[1240px] {nav ? 'text-white' : 'font-extrabold text-[#000fb5] text-2xl '}
         <div className="flex justify-between items-center w-full mx-auto px-4 text-black sticky top-0 shadow-lg h-16">
-            <div className="logo p-2 "><span className={nav ? 'text-white' : 'font-extrabold text-[#000fb5] text-2xl '}>Programmer Kanhaiya</span></div>
+            <div className="logo p-2 "><span className = {!nav?'w-full text-3xl font-bold text-[#00df9a]':'hidden'}>Programmer Kanhaiya</span></div>
+            {/* <h1 className='w-full text-3xl font-bold text-[#00df9a]'>REACT.</h1> */}
             <nav className=''>
                 <ul className='hidden md:flex'>
                    {
@@ -36,8 +37,9 @@ const Header = () => {
                 {!nav ? <AiOutlineMenu size={30} /> : <AiOutlineClose size={30} />}
             {/* </div>
             <div className='block md:hidden ' > */}
-                <ul className={nav ? 'fixed left-1 top-0 w-[60%] h-full border-r border-r-gray-300 ease-in-out duration-500 bg-slate-50' : 'ease-in-out duration-500 fixed left-[-100%]'}>
-                    <div className="logo"><span className='font-bold w-full text-[#000fb5] px-5 py-2 text-2xl'>Programmer Kanhaiya</span></div>
+                <ul className={nav ? 'fixed left-1 top-0 w-[60%] h-full border-r border-r-gray-300 ease-in-out duration-500 my-3 bg-slate-50 z-10' : 'ease-in-out duration-500 fixed left-[-100%]'}>
+                    <div className="logo"><span className='w-full text-3xl font-bold text-[#00df9a] m-5'>Programmer Kanhaiya</span></div>
+                    {/* <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>REACT.</h1> */}
                     {
                     navigation.map((items)=>{
                         return(

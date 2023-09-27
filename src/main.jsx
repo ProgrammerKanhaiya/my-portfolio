@@ -11,6 +11,9 @@ import Home from './Components/Home'
 import About from './Components/About'
 import Github from './Components/Github'
 import NotFoud from './Components/NotFound1'
+import Projects from './Components/Projects/Projects'
+
+import ComingSoon from './Components/ComingSoon'
 
 const router = createBrowserRouter([
   {
@@ -34,8 +37,12 @@ const router = createBrowserRouter([
         element: <Github />
       },
       {
+        path: "projects",
+        element: <Projects />
+      },
+      {
         path: "*",
-        element: < NotFoud/>
+        element: < ComingSoon/>
       }
     ]
   }
